@@ -1,0 +1,55 @@
+public class Cau1{
+    
+ public interface Shape{
+     
+    public double getArea();
+    public double getPerimeter();
+    }
+public class Triangle implements Shape
+{
+     public double side1;
+     public double side2;
+     public double side3;
+     public double perimeter;
+     
+        public Triangle(double side1, double side2, double side3) {
+            this.side1 = side1;
+            this.side2 = side2;
+            this.side3 = side3;
+            this.perimeter = side1 + side2 + side3;
+        }
+     
+    @Override
+     public double getArea() {
+      double s = perimeter / 2;
+            return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+     }
+    @Override
+     public double getPerimeter(){
+     return perimeter;
+     }
+ }
+  public class Circle implements Shape{
+      public float radius;
+     
+      public Circle(float radius){
+          this.radius = radius;
+      }
+      
+      @Override
+        public double getArea(){
+        return Math.PI * radius * radius;
+        }
+        
+      @Override
+      public double getPerimeter(){
+      return  2 * Math.PI * radius;
+      }
+  }
+    public static void main(String[] args) {
+        
+     Shape.Triangle = new.Triangle();
+     Shape.Circle = new.Circle();
+        }
+    }
+    
